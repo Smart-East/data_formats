@@ -1,0 +1,67 @@
+{
+  "type": "object",
+  "properties": {
+    "measurementId": {
+      "type": "integer"
+    },
+    "measurementType": {
+      "type": "string"
+    },
+    "valueType": {
+      "type": "string"
+    },
+    "commodityType": {
+      "type": "string"
+    },
+    "unit": {
+      "type": "string"
+    },
+    "scopeType": {
+      "type": "string"
+    },
+    "value": {
+      "type": "object",
+      "properties": {
+        "number": {
+          "type": "integer"
+        },
+        "scale": {
+          "type": "integer"
+        }
+      },
+      "required": [
+        "number",
+        "scale"
+      ]
+    },
+    "evaluationPeriod": {
+      "type": "object",
+      "properties": {
+        "startTime": {
+          "type": "string"
+        },
+        "endTime": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "startTime",
+        "endTime"
+      ]
+    },
+    "valueSource": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "measurementId",
+    "measurementType",
+    "valueType",
+    "commodityType",
+    "unit",
+    "scopeType",
+    "value",
+    "evaluationPeriod",
+    "valueSource"
+  ]
+}
