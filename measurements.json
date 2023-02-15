@@ -1,60 +1,7 @@
 {
+  "description": "format for sending measurement values",
   "type": "object",
-  "properties": {
-    "measurementId": {
-      "type": "integer"
-    },
-    "measurementType": {
-      "type": "string"
-    },
-    "valueType": {
-      "type": "string"
-    },
-    "commodityType": {
-      "type": "string"
-    },
-    "unit": {
-      "type": "string"
-    },
-    "scopeType": {
-      "type": "string"
-    },
-    "value": {
-      "type": "object",
-      "properties": {
-        "number": {
-          "type": "integer"
-        },
-        "scale": {
-          "type": "integer"
-        }
-      },
-      "required": [
-        "number",
-        "scale"
-      ]
-    },
-    "evaluationPeriod": {
-      "type": "object",
-      "properties": {
-        "startTime": {
-          "type": "string"
-        },
-        "endTime": {
-          "type": "string"
-        }
-      },
-      "required": [
-        "startTime",
-        "endTime"
-      ]
-    },
-    "valueSource": {
-      "type": "string"
-    }
-  },
   "required": [
-    "measurementId",
     "measurementType",
     "valueType",
     "commodityType",
@@ -63,5 +10,291 @@
     "value",
     "evaluationPeriod",
     "valueSource"
-  ]
+  ],
+  "properties": {
+    "measurementId": {
+      "type": "integer",
+      "minimum": 0,
+      "description": "EEBus_SPINE_TS_Measurement.xsd <xs:simpleType name='MeasurementIdType'> meaning <xs:restriction base='xs:unsignedInt'/>"
+    },
+    "measurementType": {
+      "type": "string",
+      "description": "EEBus_SPINE_TS_Measurement.xsd <xs:simpleType name='MeasurementTypeType'> meaning <xs:union memberTypes='ns_p:MeasurementTypeEnumType ns_p:EnumExtendType'/>",
+      "enum": [
+        "acceleration",
+        "angle",
+        "angularVelocity",
+        "area",
+        "atmosphericPressure",
+        "capacity",
+        "concentration",
+        "count",
+        "current",
+        "density",
+        "distance",
+        "electricField",
+        "energy",
+        "force",
+        "frequency",
+        "harmonicDistortion",
+        "heat",
+        "heatFlux",
+        "illuminance",
+        "impulse",
+        "level",
+        "magneticField",
+        "mass",
+        "massFlow",
+        "particles",
+        "percentage",
+        "power",
+        "powerFactor",
+        "pressure",
+        "radonActivity",
+        "relativeHumidity",
+        "resistance",
+        "solarRadiation",
+        "speed",
+        "temperature",
+        "time",
+        "torque",
+        "unknown",
+        "velocity",
+        "voltage",
+        "volume",
+        "volumetricFlow"
+      ]
+    },
+    "valueType": {
+      "type": "string",
+      "description": "EEBus_SPINE_TS_Measurement.xsd <xs:simpleType name='MeasurementValueTypeType'> meaning <xs:union memberTypes='ns_p:MeasurementValueTypeEnumType ns_p:EnumExtendType'/>",
+      "enum": [
+        "value",
+        "averageValue",
+        "minValue",
+        "maxValue",
+        "standardDeviation"
+      ]
+    },
+    "commodityType": {
+      "type": "string",
+      "description": "EEBus_SPINE_TS_CommonDataTypes.xsd <xs:simpleType name='CommodityTypeType'> meaning <xs:union memberTypes='ns_p:CommodityTypeEnumType ns_p:EnumExtendType'/>",
+      "enum": [
+        "electricity",
+        "gas",
+        "oil",
+        "water",
+        "wasteWater",
+        "domesticHotWater",
+        "heatingWater",
+        "steam",
+        "heat",
+        "coolingLoad",
+        "air"
+      ]
+    },
+    "unit": {
+      "type": "string",
+      "description": "EEBus_SPINE_TS_CommonDataTypes.xsd <xs:simpleType name='UnitOfMeasurementType'> meaning <xs:union memberTypes='ns_p:UnitOfMeasurementEnumType ns_p:EnumExtendType'/>",
+      "enum": [
+        "unknown",
+        "1",
+        "m",
+        "kg",
+        "s",
+        "A",
+        "K",
+        "mol",
+        "cd",
+        "V",
+        "W",
+        "Wh",
+        "VA",
+        "VAh",
+        "var",
+        "varh",
+        "degC",
+        "degF",
+        "Lm",
+        "lx",
+        "Ohm",
+        "Hz",
+        "dB",
+        "dBm",
+        "pct",
+        "ppm",
+        "l",
+        "l/s",
+        "l/h",
+        "deg",
+        "rad",
+        "rad/s",
+        "sr",
+        "Gy",
+        "Bq",
+        "Bq/m^3",
+        "Sv",
+        "Rd",
+        "C",
+        "F",
+        "H",
+        "J",
+        "N",
+        "N_m",
+        "N_s",
+        "Wb",
+        "T",
+        "Pa",
+        "bar",
+        "atm",
+        "psi",
+        "mmHg",
+        "m^2",
+        "m^3",
+        "m^3/h",
+        "m/s",
+        "m/s^2",
+        "m^3/s",
+        "m/m^3",
+        "kg/m^3",
+        "kg_m",
+        "m^2/s",
+        "W/m_K",
+        "J/K",
+        "1/s",
+        "W/m^2",
+        "J/m^2",
+        "S",
+        "S/m",
+        "K/s",
+        "Pa/s",
+        "J/kg_K",
+        "Vs",
+        "V/m",
+        "V/Hz",
+        "As",
+        "A/m",
+        "Hz/s",
+        "kg/s",
+        "kg_m^2",
+        "J/Wh",
+        "W/s",
+        "ft^3",
+        "ft^3/h",
+        "ccf",
+        "ccf/h",
+        "US.liq.gal",
+        "US.liq.gal/h",
+        "Imp.gal",
+        "Imp.gal/h",
+        "Btu",
+        "Btu/h",
+        "Ah",
+        "kg/Wh"
+      ]
+    },
+    "scopeType": {
+      "type": "string",
+      "description": "EEBus_SPINE_TS_CommonDataTypes.xsd <xs:simpleType name='ScopeTypeType'> meaning <xs:union memberTypes='ns_p:ScopeTypeEnumType ns_p:EnumExtendType'/>",
+      "enum": [
+        "ac",
+        "acCosPhiGrid",
+        "acCurrentA",
+        "acCurrentB",
+        "acCurrentC",
+        "acFrequencyGrid",
+        "acPowerA",
+        "acPowerB",
+        "acPowerC",
+        "acPowerLimitPct",
+        "acPowerTotal",
+        "acVoltageA",
+        "acVoltageB",
+        "acVoltageC",
+        "acYieldDay",
+        "acYieldTotal",
+        "dcCurrent",
+        "dcPower",
+        "dcString1",
+        "dcString2",
+        "dcString3",
+        "dcString4",
+        "dcString5",
+        "dcString6",
+        "dcTotal",
+        "dcVoltage",
+        "dhwTemperature",
+        "flowTemperature",
+        "outsideAirTemperature",
+        "returnTemperature",
+        "roomAirTemperature",
+        "charge",
+        "stateOfCharge",
+        "discharge",
+        "gridConsumption",
+        "gridFeedIn",
+        "selfConsumption",
+        "overloadProtection",
+        "acPower",
+        "acEnergy",
+        "acCurrent",
+        "acVoltage",
+        "batteryControl",
+        "simpleIncentiveTable"
+      ]
+    },
+    "value": {
+      "type": "object",
+      "description": "EEBus_SPINE_TS_CommonDataTypes.xsd <xs:complexType name='ScaledNumberType'>",
+      "required": [
+        "number",
+        "scale"
+      ],
+      "properties": {
+        "number": {
+          "type": "number",
+          "description": "EEBus_SPINE_TS_CommonDataTypes.xsd <xs:simpleType name='NumberType'>"
+        },
+        "scale": {
+          "type": "number",
+          "description": "EEBus_SPINE_TS_CommonDataTypes.xsd <xs:simpleType name='ScaleType'>"
+        }
+      }
+    },
+    "evaluationPeriod": {
+      "type": "object",
+      "description": "EEBus_SPINE_TS_CommonDataTypes.xsd <xs:complexType name='TimePeriodType'>",
+      "required": [
+        "startTime",
+        "endTime"
+      ],
+      "properties": {
+        "startTime": {
+          "type": "string",
+          "format": [
+            "date-time",
+            "duration"
+          ],
+          "description": "EEBus_SPINE_TS_CommonDataTypes.xsd <xs:simpleType name='AbsoluteOrRelativeTimeType'> meaning <xs:union memberTypes='xs:duration xs:dateTime'/>"
+        },
+        "endTime": {
+          "type": "string",
+          "format": [
+            "date-time",
+            "duration"
+          ],
+          "description": "EEBus_SPINE_TS_CommonDataTypes.xsd <xs:simpleType name='AbsoluteOrRelativeTimeType'> meaning <xs:union memberTypes='xs:duration xs:dateTime'/>"
+        }
+      }
+    },
+    "valueSource": {
+      "type": "string",
+      "description": "EEBus_SPINE_TS_Measurement.xsd <xs:simpleType name='MeasurementValueSourceEnumType'>",
+      "enum": [
+        "measuredValue",
+        "calculatedValue",
+        "empiricalValue"
+      ]
+    }
+  }
 }
