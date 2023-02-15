@@ -271,18 +271,10 @@
       "properties": {
         "startTime": {
           "type": "string",
-          "format": [
-            "date-time",
-            "duration"
-          ],
           "description": "EEBus_SPINE_TS_CommonDataTypes.xsd <xs:simpleType name='AbsoluteOrRelativeTimeType'> meaning <xs:union memberTypes='xs:duration xs:dateTime'/>"
         },
         "endTime": {
           "type": "string",
-          "format": [
-            "date-time",
-            "duration"
-          ],
           "description": "EEBus_SPINE_TS_CommonDataTypes.xsd <xs:simpleType name='AbsoluteOrRelativeTimeType'> meaning <xs:union memberTypes='xs:duration xs:dateTime'/>"
         }
       }
