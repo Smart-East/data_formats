@@ -13,7 +13,7 @@
   ],
   "properties": {
     "measurementId": {
-      "type": "integer",
+      "type": "number",
       "minimum": 0,
       "description": "EEBus_SPINE_TS_Measurement.xsd <xs:simpleType name='MeasurementIdType'> meaning <xs:restriction base='xs:unsignedInt'/>"
     },
