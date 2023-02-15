@@ -1,4 +1,5 @@
 {
+  "title" : "EEBUS measurement format",
   "description": "Formats for sending measurement values according to EEBus_SPINE_TS_Measurement.xsd and EEBus_SPINE_TS_CommonDataTypes.xsd",
   "type": "object",
   "required": [
